@@ -18,7 +18,7 @@ namespace BE_SpexPAL.DataContext
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
-            Database.SetInitializer<ApplicationUserDbContext>(new DropCreateDatabaseAlways<ApplicationUserDbContext>());
+          // Database.SetInitializer<ApplicationUserDbContext>(new DropCreateDatabaseAlways<ApplicationUserDbContext>());
         }
         public static ApplicationUserDbContext Create()
         {

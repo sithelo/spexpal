@@ -7,13 +7,13 @@ namespace BE_SpexPAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class Renames1 : IMigrationMetadata
+    public sealed partial class Init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Renames1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201505191120148_Renames1"; }
+            get { return "201505201416168_Init"; }
         }
         
         string IMigrationMetadata.Source
