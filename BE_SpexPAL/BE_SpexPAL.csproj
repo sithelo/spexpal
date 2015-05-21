@@ -149,6 +149,7 @@
     <Compile Include="Infrastructure\ApplicationRoleManager.cs" />
     <Compile Include="Infrastructure\ApplicationUserManager.cs" />
     <Compile Include="Infrastructure\ExtendedClaimsProvider.cs" />
+    <Compile Include="Infrastructure\UserClaimsListProvider.cs" />
     <Compile Include="Migrations\201505201416168_Init.cs" />
     <Compile Include="Migrations\201505201416168_Init.Designer.cs">
       <DependentUpon>201505201416168_Init.cs</DependentUpon>
@@ -165,6 +166,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\JwtFormat.cs" />
     <Compile Include="Providers\OAuthProvider.cs" />
+    <Compile Include="Repository\ISpexPal.cs" />
+    <Compile Include="Repository\SpexPalRepository.cs" />
     <Compile Include="Services\EmailService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

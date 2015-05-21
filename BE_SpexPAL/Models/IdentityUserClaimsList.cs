@@ -7,7 +7,7 @@ namespace BE_SpexPAL.Models
 {
     public class IdentityUserClaimsList
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string ClaimsListType { get; set; }
         public string ClaimsListValue { get; set; }
     }
