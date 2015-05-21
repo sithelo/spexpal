@@ -20,6 +20,8 @@ namespace BE_SpexPAL.DataContext
             Configuration.LazyLoadingEnabled = false;
           // Database.SetInitializer<ApplicationUserDbContext>(new DropCreateDatabaseAlways<ApplicationUserDbContext>());
         }
+
+        //public Dbs Type { get; set; }
         public static ApplicationUserDbContext Create()
         {
             return new ApplicationUserDbContext();
