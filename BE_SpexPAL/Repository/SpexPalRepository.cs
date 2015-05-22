@@ -33,7 +33,13 @@ namespace BE_SpexPAL.Repository
         {
             return await _db.Set<T>().ToListAsync();
         }
+        public virtual async Task<T> GetById(Guid id)
+        {
+            //T entity = await _db.Set<T>().FindAsync(id);
+           // await this.LoadReferences(entity, includes);
 
+            return await _db.Set<T>().FindAsync(id);
+        }
         public async Task<int> UpdateAsync(T t)
         {
             _db.Entry(t).State = EntityState.Modified;

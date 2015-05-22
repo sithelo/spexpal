@@ -143,6 +143,7 @@
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\ClaimsController.cs" />
+    <Compile Include="Controllers\IdentityUserClaimsListsController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="DataContext\ApplicationUserDbContext.cs" />
     <Compile Include="DataContext\SpexPalDbContext.cs" />
@@ -150,9 +151,9 @@
     <Compile Include="Infrastructure\ApplicationUserManager.cs" />
     <Compile Include="Infrastructure\ExtendedClaimsProvider.cs" />
     <Compile Include="Infrastructure\UserClaimsListProvider.cs" />
-    <Compile Include="Migrations\201505201416168_Init.cs" />
-    <Compile Include="Migrations\201505201416168_Init.Designer.cs">
-      <DependentUpon>201505201416168_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201505221225472_ClaimsData.cs" />
+    <Compile Include="Migrations\201505221225472_ClaimsData.Designer.cs">
+      <DependentUpon>201505221225472_ClaimsData.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModel.cs" />
@@ -175,8 +176,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201505201416168_Init.resx">
-      <DependentUpon>201505201416168_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201505221225472_ClaimsData.resx">
+      <DependentUpon>201505221225472_ClaimsData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

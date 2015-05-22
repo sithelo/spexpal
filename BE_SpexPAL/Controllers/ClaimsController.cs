@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Results;
 using System.Web.UI.WebControls;
 using BE_SpexPAL.DataContext;
 using BE_SpexPAL.Infrastructure;
@@ -14,21 +15,37 @@ using BE_SpexPAL.Repository;
 
 namespace BE_SpexPAL.Controllers
 {
+     [RoutePrefix("api/claims")]
     public class ClaimsController : BaseApiController
     {
         SpexPalRepository<IdentityUserClaimsList> _repo = new SpexPalRepository<IdentityUserClaimsList>(new SpexPalDbContext());
 
         //Add Claims to table Claims in SpexPalData
-        public async Task AddClaimsToSpexpalTable(ClaimBindingModel model)
+        [Route("add")]
+        public async Task<IHttpActionResult> AddClaimsToSpexpalTable(IdentityUserClaimsList model)
         {
-            //ToDo
-           // CheckBox if model value exist in database
-           // await _repo.FindAsync(model.Value);
-//            if (model.Id.Equals()
-//            {
-//                
-//            }
-          
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+           await _repo.AddAsync(model);
+           Uri locationHeader = new Uri(Url.Link("GetClaim", new { id = model.Id }));
+            return Created(locationHeader, model);
+        }
+         //getbyId
+        [Route("GetClaim", Name = "GetClaim")]
+        public async Task<IHttpActionResult> GetClaim(Guid id)
+        {
+            var userclaim = await _repo.GetById(id);
+
+            if (userclaim != null)
+            {
+                return Ok(userclaim);
+            }
+
+            return NotFound();
+
         }
         [Authorize(Roles = "Admin")]
         [Route("user/{id:guid}/assignclaims")]
